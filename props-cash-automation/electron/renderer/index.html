@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>Props.cash Automation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Props.cash Automation</h1>
+
+    <!-- Auth Status -->
+    <div class="card">
+      <h2>Auth Status</h2>
+      <div class="card-body">
+        <span id="auth-badge" class="status-badge status-missing">checking...</span>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="card">
+      <h2>Actions</h2>
+      <div class="card-body actions-row">
+        <button class="btn btn-blue" id="btn-init">Init Auth</button>
+        <button class="btn btn-green" id="btn-run">Run Now</button>
+      </div>
+      <div id="action-status" class="meta"></div>
+    </div>
+
+    <!-- Scheduler -->
+    <div class="card">
+      <h2>Daily Schedule</h2>
+      <div class="card-body scheduler-row">
+        <label class="toggle-label">
+          <input type="checkbox" id="schedule-toggle" class="toggle-input">
+          <span class="toggle-slider"></span>
+          <span class="toggle-text">Enabled</span>
+        </label>
+        <div class="time-picker">
+          <label for="schedule-time">Run at:</label>
+          <input type="time" id="schedule-time" value="08:00" class="time-input">
+          <button class="btn btn-small btn-blue" id="btn-save-schedule">Save</button>
+        </div>
+      </div>
+      <div id="next-run" class="meta">Loading schedule...</div>
+    </div>
+
+    <!-- Last Run -->
+    <div class="card">
+      <h2>Last Run</h2>
+      <div id="last-run" class="meta">Loading...</div>
+    </div>
+
+    <!-- Live Console -->
+    <div class="card">
+      <h2>Live Output</h2>
+      <div id="console-output" class="console-box">Waiting for activity...</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

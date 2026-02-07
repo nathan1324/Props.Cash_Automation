@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "Automated browser task runner for props.cash with Google SSO session reuse",
   "private": true,
+  "main": "dist/electron/main.js",
   "scripts": {
     "build": "tsc",
     "init:auth": "tsx automation/authInit.ts",
     "run:manual": "tsx automation/runner.ts --headless=false",
     "run:daily": "tsx automation/runner.ts --headless=true",
     "server": "tsx server/index.ts",
-    "dev": "tsx watch server/index.ts"
+    "dev": "tsx watch server/index.ts",
+    "electron:build": "tsc -p tsconfig.electron.json",
+    "electron:dev": "npm run electron:build && electron .",
+    "dist": "npm run electron:build && electron-builder",
+    "dist:dir": "npm run electron:build && electron-builder --dir"
   },
   "dependencies": {
     "express": "^4.21.0",
@@ -18,7 +23,40 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.0",
+    "concurrently": "^9.0.0",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "wait-on": "^8.0.0"
+  },
+  "build": {
+    "appId": "com.propscash.automation",
+    "productName": "Props.cash Automation",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/electron/**/*",
+      "electron/renderer/**/*",
+      "automation/**/*.ts",
+      "scripts/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "node_modules",
+        "to": "node_modules",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }

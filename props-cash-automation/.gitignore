@@ -1,5 +1,6 @@
 node_modules/
 dist/
+release/
 automation/storageState.json
 automation/.chrome-profile/
 automation/.runner.lock
