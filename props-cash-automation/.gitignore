@@ -1,0 +1,8 @@
+node_modules/
+dist/
+automation/storageState.json
+automation/.chrome-profile/
+automation/.runner.lock
+artifacts/screenshots/*.png
+logs/*.json
+.env

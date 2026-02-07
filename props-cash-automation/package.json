@@ -1,0 +1,24 @@
+{
+  "name": "props-cash-automation",
+  "version": "1.0.0",
+  "description": "Automated browser task runner for props.cash with Google SSO session reuse",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "init:auth": "tsx automation/authInit.ts",
+    "run:manual": "tsx automation/runner.ts --headless=false",
+    "run:daily": "tsx automation/runner.ts --headless=true",
+    "server": "tsx server/index.ts",
+    "dev": "tsx watch server/index.ts"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "playwright": "^1.49.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
