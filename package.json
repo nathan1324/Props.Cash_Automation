@@ -9,6 +9,10 @@
     "init:auth": "tsx automation/authInit.ts",
     "run:manual": "tsx automation/runner.ts --headless=false",
     "run:daily": "tsx automation/runner.ts --headless=true",
+    "scrape": "tsx automation/scrapeCli.ts --headless=false",
+    "scrape:headless": "tsx automation/scrapeCli.ts --headless=true",
+    "scrape:debug": "tsx automation/scrapeCli.ts --headless=false --debug=true",
+    "scrape:discover": "tsx automation/scrapeCli.ts --headless=false --discover",
     "server": "tsx server/index.ts",
     "dev": "tsx watch server/index.ts",
     "electron:build": "tsc -p tsconfig.electron.json",
@@ -17,12 +21,15 @@
     "dist:dir": "npm run electron:build && electron-builder --dir"
   },
   "dependencies": {
+    "dotenv": "^17.2.4",
     "express": "^4.21.0",
+    "pg": "^8.18.0",
     "playwright": "^1.49.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.0",
+    "@types/pg": "^8.16.0",
     "concurrently": "^9.0.0",
     "electron": "^33.0.0",
     "electron-builder": "^25.0.0",
@@ -47,7 +54,9 @@
       {
         "from": "node_modules",
         "to": "node_modules",
-        "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       }
     ],
     "win": {

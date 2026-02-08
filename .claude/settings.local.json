@@ -5,7 +5,20 @@
       "WebSearch",
       "WebFetch(domain:v2.tauri.app)",
       "Bash(node --version:*)",
-      "Bash(npm:*)"
+      "Bash(npm:*)",
+      "Bash(git checkout:*)",
+      "WebFetch(domain:props.cash)",
+      "WebFetch(domain:blog.props.cash)",
+      "WebFetch(domain:www.brandonlevan.me)",
+      "WebFetch(domain:apps.apple.com)",
+      "WebFetch(domain:play.google.com)",
+      "Bash(npx tsc:*)",
+      "Bash(git status:*)",
+      "Bash(node -e:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npx electron .)",
+      "Bash(nslookup:*)",
+      "Bash(git add:*)"
     ]
   }
 }

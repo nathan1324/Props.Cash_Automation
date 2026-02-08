@@ -26,6 +26,7 @@
       <div class="card-body actions-row">
         <button class="btn btn-blue" id="btn-init">Init Auth</button>
         <button class="btn btn-green" id="btn-run">Run Now</button>
+        <button class="btn btn-orange" id="btn-scrape">Scrape Props</button>
       </div>
       <div id="action-status" class="meta"></div>
     </div>
@@ -52,6 +53,56 @@
     <div class="card">
       <h2>Last Run</h2>
       <div id="last-run" class="meta">Loading...</div>
+    </div>
+
+    <!-- Last Scrape -->
+    <div class="card">
+      <h2>Last Scrape</h2>
+      <div id="last-scrape" class="meta">No scrapes yet</div>
+    </div>
+
+    <!-- Data Browser -->
+    <div class="card">
+      <h2>Data Browser</h2>
+      <div id="db-status-msg" class="meta">Checking database...</div>
+      <div id="data-browser" style="display:none;">
+        <div class="card-body browser-controls">
+          <select id="db-date" class="select-input">
+            <option value="">Select date...</option>
+          </select>
+          <select id="db-prop" class="select-input">
+            <option value="">All props</option>
+          </select>
+          <input type="text" id="db-player-search" class="text-input" placeholder="Search player...">
+          <select id="db-sort" class="select-input">
+            <option value="player">Name</option>
+            <option value="diff">Edge (DIFF)</option>
+            <option value="projection">Projection</option>
+            <option value="line">Line</option>
+          </select>
+          <button class="btn btn-small btn-blue" id="btn-db-load">Load</button>
+        </div>
+        <div id="db-summary" class="meta"></div>
+        <div id="db-table-wrap" class="table-wrap">
+          <table id="db-table">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Team</th>
+                <th>Prop</th>
+                <th>Line</th>
+                <th>O</th>
+                <th>U</th>
+                <th>Proj</th>
+                <th>Diff</th>
+                <th>DVP</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="db-table-body"></tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <!-- Live Console -->

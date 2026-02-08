@@ -66,6 +66,7 @@ h1 {
 .btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .btn-blue  { background: #1f6feb; color: #fff; }
 .btn-green { background: #238636; color: #fff; }
+.btn-orange { background: #d97706; color: #fff; }
 .btn:hover:not(:disabled) { opacity: 0.85; }
 .btn-small { padding: 0.35rem 0.8rem; font-size: 0.8rem; }
 
@@ -162,6 +163,73 @@ h1 {
   line-height: 1.5;
   color: #c9d1d9;
 }
+
+/* Data Browser */
+.browser-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.select-input, .text-input {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #e1e4e8;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+.select-input { min-width: 120px; }
+.text-input { min-width: 130px; }
+
+.table-wrap {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+#db-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+#db-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#db-table th {
+  background: #161b22;
+  color: #8b949e;
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid #30363d;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.3px;
+}
+
+#db-table td {
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid #21262d;
+  color: #c9d1d9;
+  white-space: nowrap;
+}
+
+#db-table tbody tr:hover { background: #1c2128; }
+
+.cell-positive { color: #3fb950; }
+.cell-negative { color: #f85149; }
+.cell-status { color: #d29922; font-weight: 600; font-size: 0.7rem; }
 
 /* Utility */
 .meta { color: #8b949e; font-size: 0.85rem; margin-top: 0.5rem; }

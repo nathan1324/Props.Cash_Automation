@@ -4,6 +4,10 @@ release/
 automation/storageState.json
 automation/.chrome-profile/
 automation/.runner.lock
+automation/.scraper.lock
 artifacts/screenshots/*.png
+artifacts/scrapes/
+artifacts/debug/
 logs/*.json
 .env
+.claude/
